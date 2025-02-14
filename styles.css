@@ -44,7 +44,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.25rem 4rem;
+  padding: 20px 40px;
   background-color: rgba(var(--nav-bg-rgb), 0.95);
   position: sticky;
   top: 0;
@@ -115,7 +115,7 @@ header {
 main {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 0;
 }
 
 section {
