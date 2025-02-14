@@ -59,6 +59,7 @@ class Quiz {
     this.currentQuestion = 0;
     this.score = 0;
     this.container.innerHTML = '';
+    this.optionsSelected = false; // Track if an option has been selected
   }
 
   showQuestion() {
@@ -78,27 +79,45 @@ class Quiz {
     `;
     
     this.container.innerHTML = questionHTML;
+    this.optionsSelected = false; // Reset the option selection status for the new question
     
     // Add event listeners to options
     const options = this.container.querySelectorAll('.option-btn');
     options.forEach(option => {
-      option.addEventListener('click', () => this.checkAnswer(parseInt(option.dataset.index)));
+      option.addEventListener('click', () => {
+        if (!this.optionsSelected) { // Only allow selection if no option has been selected yet
+          this.checkAnswer(parseInt(option.dataset.index));
+          this.optionsSelected = true; // Prevent multiple selections for the same question
+        }
+      });
     });
   }
 
   checkAnswer(selected) {
     const question = this.questions[this.currentQuestion];
+    const options = this.container.querySelectorAll('.option-btn');
+
+    options.forEach((option, index) => {
+      if (index === question.correct) {
+        option.classList.add('correct');
+      } else if (index === selected) {
+        option.classList.add('incorrect');
+      }
+      option.disabled = true; // Disable all options after selection
+    });
+    
     if (selected === question.correct) {
       this.score++;
     }
     
-    this.currentQuestion++;
-    
-    if (this.currentQuestion < this.questions.length) {
-      this.showQuestion();
-    } else {
-      this.showResults();
-    }
+    setTimeout(() => {
+      this.currentQuestion++;
+      if (this.currentQuestion < this.questions.length) {
+        this.showQuestion();
+      } else {
+        this.showResults();
+      }
+    }, 1500);
   }
 
   showResults() {
