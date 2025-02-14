@@ -1,0 +1,398 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Lab - Bubble Sort</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="theme.js" defer></script>
+  <script src="tabs.js" defer></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body class="light-mode">
+  <header>
+    <a href="#" class="logo">
+     <img src="./images/virtuallab logo.png" alt="" class="logo-img">
+    </a>
+    
+    <button id="theme-toggle" aria-label="Toggle theme">
+      <i class="fa-solid fa-sun sun-icon"></i>
+      <i class="fa-regular fa-moon moon-icon"></i>
+    </button>
+  </header>
+
+  <main>
+    <div class="breadcrumb">
+      <span><a href="">Computer Science and Engineering</a></span>
+      <i class="fas fa-chevron-right"></i>
+      <span><a href="">Data Structures - 1</a></span>
+      <i class="fas fa-chevron-right"></i>
+      <span><a href="">Experiments</a></span>
+    </div>
+
+    <section class="course-header">
+      <h1>Bubble Sort Algorithm</h1>
+      <p class="course-intro">Master the fundamentals of sorting algorithms with our comprehensive guide to Bubble
+        Sort - one of the simplest yet important sorting algorithms in computer science.</p>
+      <div class="course-meta">
+        <div class="meta-item">
+          <i class="fas fa-clock"></i>
+          <span>Duration: 45 minutes</span>
+        </div>
+        <div class="meta-item">
+          <i class="fas fa-star"></i>
+          <span>Rating: 4.8/5</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="tabs-section">
+      <div class="tabs-container">
+        <div class="tabs-scroll">
+          <button class="tab-btn active" data-tab="aim">Aim</button>
+          <button class="tab-btn" data-tab="overview">Overview</button>
+          <button class="tab-btn" data-tab="recap">Recap</button>
+          <button class="tab-btn" data-tab="pretest">Pretest</button>
+          <button class="tab-btn" data-tab="bubble-sort">Bubble Sort</button>
+          <button class="tab-btn" data-tab="optimized">Optimized Bubble Sort</button>
+          <button class="tab-btn" data-tab="assessment">Code Assessment</button>
+          <button class="tab-btn" data-tab="analysis">Analysis</button>
+          <button class="tab-btn" data-tab="posttest">Posttest</button>
+          <button class="tab-btn" data-tab="references">Further Readings</button>
+        </div>
+      </div>
+
+      <div class="tab-content active" id="aim">
+        <h3>Learning Objectives of the Experiment</h3>
+        <div class="objectives-list">
+          <p>In this experiment, we will be able to do the following:</p>
+          <ul>
+            <li>Given an unsorted array of numbers, generate a sorted array of numbers by applying Bubble Sort.</li>
+            <li>Optimise the Bubble Sort algorithm to achieve better performance.</li>
+            <li>Demonstrate knowledge of time complexity of Bubble Sort by counting the number of operations involved
+              in each iteration.</li>
+            <li>Compare Bubble Sort with other sorting algorithms and realise Bubble Sort as a stable comparison
+              sorting algorithm.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-content" id="overview">
+        <h3>Overview of the Experiment</h3>
+        <div class="overview-section">
+          <div class="prerequisites">
+            <h4>Prerequisites of the Experiment</h4>
+            <p>This experiment requires you to have basic knowledge about:</p>
+            <ul>
+              <li>The Notion of Sorting</li>
+              <li>Notion of Time and Space complexity</li>
+              <li>And above all, a curiosity to learn and explore!</li>
+            </ul>
+          </div>
+
+          <div class="overview-description">
+            <p>The aim of this experiment is to understand the Bubble Sort algorithm, its time and space complexity,
+              and how it compares against other sorting algorithms.</p>
+            <p>The experiment features a series of modules with video lectures, interactive demonstrations,
+              simulations, hands-on practice exercises and quizzes for self analysis.</p>
+          </div>
+
+          <div class="modules-table">
+            <h4>Experiment Modules and their Weightage</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th>Weightage</th>
+                  <th>Expectation</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Pre-Test</td>
+                  <td>10%</td>
+                  <td>Solve All Questions</td>
+                </tr>
+                <tr>
+                  <td>Bubble Sort</td>
+                  <td>25%</td>
+                  <td>Understand the Bubble Sort algorithm</td>
+                </tr>
+                <tr>
+                  <td>Optimized Bubble Sort</td>
+                  <td>25%</td>
+                  <td>Understand the optimization technique</td>
+                </tr>
+                <tr>
+                  <td>Analysis</td>
+                  <td>25%</td>
+                  <td>Understand the time and space complexity</td>
+                </tr>
+                <tr>
+                  <td>Post-test</td>
+                  <td>15%</td>
+                  <td>Solve All Questions</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="recap">
+        <h3>Basic Concepts</h3>
+        <div class="recap-content">
+          <div class="concept-section">
+            <h4>What is Sorting?</h4>
+            <p>Given a list of random numbers, sorting means ordering the numbers in either ascending or descending
+              order. By default, we sort numbers in an ascending order.</p>
+            <div class="array-visualization">
+              <div class="array unsorted">
+                <h5>Unsorted Array</h5>
+                <div class="array-bars">
+                  <div class="bar" style="height: 60%"></div>
+                  <div class="bar" style="height: 30%"></div>
+                  <div class="bar" style="height: 90%"></div>
+                  <div class="bar" style="height: 40%"></div>
+                  <div class="bar" style="height: 70%"></div>
+                </div>
+              </div>
+              <div class="array-arrow">→</div>
+              <div class="array sorted">
+                <h5>Sorted Array</h5>
+                <div class="array-bars">
+                  <div class="bar" style="height: 30%"></div>
+                  <div class="bar" style="height: 40%"></div>
+                  <div class="bar" style="height: 60%"></div>
+                  <div class="bar" style="height: 70%"></div>
+                  <div class="bar" style="height: 90%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="concept-section">
+            <h4>Time and Space Complexity</h4>
+            <p>Time complexity of an algorithm gives the measure of time taken by it to run as a function of the
+              length of the input. Similarly, Space complexity of an algorithm quantifies the amount of space or memory
+              taken by an algorithm to run as a function of the length of the input.</p>
+            <p>Recall that suppose our input is an array of N elements, and our algorithm iterates through the array
+              once, time complexity will be O(N). If I run two embedded loops to traverse the array N times, time
+              complexity will be O(N²).</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="pretest">
+        <div class="quiz-section">
+          <div class="difficulty-selector">
+            <button class="difficulty-btn active" data-level="beginner">Beginner</button>
+            <button class="difficulty-btn" data-level="intermediate">Intermediate</button>
+            <button class="difficulty-btn" data-level="advanced">Advanced</button>
+          </div>
+          <div class="quiz-container">
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="bubble-sort">
+        <div class="bubble-sort-container">
+          <div class="bubble-sort-sidebar">
+            <button class="bubble-sort-btn active" data-bubble-tab="bubble-aim">Aim</button>
+            <button class="bubble-sort-btn" data-bubble-tab="bubble-concept">Concept</button>
+            <button class="bubble-sort-btn" data-bubble-tab="bubble-algorithm">Algorithm</button>
+            <button class="bubble-sort-btn" data-bubble-tab="bubble-demo">Demo</button>
+            <button class="bubble-sort-btn" data-bubble-tab="bubble-practice">Practice</button>
+            <button class="bubble-sort-btn" data-bubble-tab="bubble-exercise">Exercise</button>
+            <button class="bubble-sort-btn" data-bubble-tab="bubble-quiz">Quiz</button>
+          </div>
+          <div class="bubble-sort-content">
+            <div class="bubble-sort-tab active" id="bubble-aim">
+              <h3>Aim</h3>
+              <p>Understand the core objective of bubble sort.</p>
+            </div>
+            <div class="bubble-sort-tab" id="bubble-concept">
+              <h3>Concept</h3>
+              <p>Learn the basic principle behind bubble sort.</p>
+            </div>
+            <div class="bubble-sort-tab" id="bubble-algorithm">
+              <h3>Algorithm</h3>
+              <p>Explore the detailed steps of the bubble sort algorithm.</p>
+            </div>
+            <div class="bubble-sort-tab" id="bubble-demo">
+              <h3>Demo</h3>
+              <p>Interactive demonstration of the bubble sort process.</p>
+              <div id="bubble-sort-demo">
+              </div>
+            </div>
+            <div class="bubble-sort-tab" id="bubble-practice">
+              <h3>Practice</h3>
+              <p>Hands-on exercises to practice bubble sort.</p>
+            </div>
+            <div class="bubble-sort-tab" id="bubble-exercise">
+              <h3>Exercise</h3>
+              <p>Challenging exercises to test your understanding of bubble sort.</p>
+            </div>
+            <div class="bubble-sort-tab" id="bubble-quiz">
+              <h3>Quiz</h3>
+              <p>Assess your knowledge with a quiz on bubble sort.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="tab-content" id="optimized">
+        <h3>Optimized Bubble Sort</h3>
+        <p>Optimized Bubble Sort implementation.</p>
+      </div>
+      <div class="tab-content" id="assessment">
+        <h3>Code Assessment</h3>
+        <p>Code assessment for the Bubble Sort algorithm.</p>
+      </div>
+      <div class="tab-content" id="analysis">
+        <h3>Analysis</h3>
+        <p>Analysis of the Bubble Sort algorithm.</p>
+      </div>
+      <div class="tab-content" id="posttest">
+        <div class="quiz-section">
+          <div class="difficulty-selector">
+            <button class="difficulty-btn active" data-level="beginner">Beginner</button>
+            <button class="difficulty-btn" data-level="intermediate">Intermediate</button>
+            <button class="difficulty-btn" data-level="advanced">Advanced</button>
+          </div>
+          <div class="quiz-container">
+          </div>
+        </div>
+      </div>
+      <div class="tab-content" id="references">
+        <h3>Explore More About Bubble Sort</h3>
+        <div class="references-content">
+          <div class="resource-section">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><a href="#" target="_blank"><i class="fas fa-code"></i> Coding implementation of Bubble Sort</a></li>
+              <li><a href="#" target="_blank"><i class="fas fa-chart-bar"></i> Bubble Sort Visualization</a></li>
+            </ul>
+          </div>
+
+          <div class="resource-section">
+            <h4>Quizzes</h4>
+            <ul>
+              <li><a href="#" target="_blank"><i class="fas fa-question-circle"></i> MCQ Quiz for Bubble Sort</a></li>
+              <li><a href="#" target="_blank"><i class="fas fa-tasks"></i> Combined Quiz for Sorting Algorithms</a></li>
+              <li><a href="#" target="_blank"><i class="fas fa-laptop-code"></i> Online Quiz</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="navigation-buttons">
+        <button class="nav-btn prev" disabled><i class="fas fa-arrow-left"></i> Previous</button>
+        <button class="nav-btn next">Next <i class="fas fa-arrow-right"></i></button>
+      </div>
+    </section>
+
+    <section class="feedback-section">
+      <h2>Your Feedback Matters</h2>
+      <div class="feedback-container">
+        <div class="rating">
+          <h3>Rate this lesson</h3>
+          <div class="stars">
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+            <i class="fas fa-star"></i>
+          </div>
+        </div>
+        <form class="feedback-form">
+          <textarea placeholder="Share your experience with this lesson..."></textarea>
+          <button type="submit">Submit Feedback</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Virtual Lab</h3>
+        <p>Empowering students through interactive learning experiences in partnership with Sakshat Portal and Outreach
+          Portal.</p>
+        <div class="social-links">
+          <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        </div>
+      </div>
+      <div class="footer-section">
+        <h3>Community Links</h3>
+        <ul>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Sakshat Portal</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Outreach Portal</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> FAQ: Virtual Labs</a></li>
+          <li><a href="#"><i class="fas fa-chevron-right"></i> Virtual Labs Blog</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Info</h3>
+        <ul>
+          <li><a href="tel:01126582050"><i class="fas fa-phone"></i> 011-26582050</a></li>
+          <li><a href="/cdn-cgi/l/email-protection#85f6f0f5f5eaf7f1c5f3e9e4e7f6abe4e6abeceb"><i class="fas fa-envelope"></i> <span class="__cf_email__" data-cfemail="7a090f0a0a15080e3a0c161b1809541b19541314">[email&#160;protected]</span></a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>Licensed under <a href="https://www.gnu.org/licenses/agpl-3.0.en.html" target="_blank">AGPL 3.0</a> and <a
+          href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">Creative Commons (CC BY-NC-SA
+          4.0)</a></p>
+    </div>
+  </footer>
+  <button class="report-bug">
+    <i class="fas fa-bug"></i>
+    Report Bug
+  </button>
+
+  <div class="report-modal">
+    <div class="report-form">
+      <button class="close-modal">
+        <i class="fas fa-times"></i>
+      </button>
+      <h3>Report a Bug</h3>
+      <form>
+        <div class="form-group">
+          <label for="bug-title">Select the Issue</label>
+          <select id="bug-title" required>
+            <option value="">Please select an issue</option>
+            <option value="insufficient">Insufficient Content</option>
+            <option value="not-loading">Page Not Loading</option>
+            <option value="not-visible">Content Not Visible</option>
+            <option value="incorrect">Incorrect Content</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="bug-description">Please describe your issue</label>
+          <textarea id="bug-description" placeholder="Enter description here" required></textarea>
+        </div>
+        <div class="form-group">
+          <label for="bug-email">Please enter your email (Optional)</label>
+          <input type="email" id="bug-email" placeholder="Enter email here for communication">
+        </div>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="include-screenshot">
+            Include Screenshot
+          </label>
+        </div>
+        <button type="submit" class="submit-bug">Submit Report</button>
+      </form>
+    </div>
+  </div>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/quiz.js"></script>
+  <script src="js/confetti.js"></script>
+  <script src="js/bubble-sort-demo.js"></script>
+</body>
+
+</html>
